@@ -2,11 +2,13 @@
   "name": "411_wk6_day1_redux_thunk",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://BradLFowler.github.io/411_wk6_day1_redux_thunk",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.8.2",
     "@mui/material": "^5.8.2",
+    "gh-pages": "^4.0.0",
     "i": "^0.3.7",
     "npm": "^8.10.0",
     "react": "^18.1.0",
