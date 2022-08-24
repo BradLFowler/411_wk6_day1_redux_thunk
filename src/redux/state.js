@@ -1,10 +1,10 @@
 export default {
-    user: {
+   user: {
         username: 'test-user-1',
         email: 'test-user@example.com'
     },
-    cars: [
-        {
+   cars: [
+         {
            "id": 1,
            "name":"chevrolet chevelle malibu",
            "mpg":18,
@@ -144,6 +144,7 @@ export default {
            "cylinders":8,
            "horsepower":225
         }
-    ]
+    ],
+    makes: []
   };
   
