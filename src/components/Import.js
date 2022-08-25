@@ -13,7 +13,6 @@ import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import '../App.css'
 
-
 const Import = (props) => {
     // fill out this component
     const [anchorEl, setAnchorEl] = useState(null | HTMLElement);
@@ -30,6 +29,16 @@ const Import = (props) => {
         <Container className="importContainer" maxWidth="sm" >
             <Button variant='contained' color='primary' onClick={props.fetchMakes}>Import</Button>
             <h2>COUNT: {props.makes.length}</h2>
+            <Menu
+                sx={{ borderRadius: 'none'}}
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+            >
+                <MenuItem onClick={handleClose}>
+                    <p onClick={props.deleteMake}>Delete</p>
+                </MenuItem>
+            </Menu>
             <Table aria-label="simple table">
                 <TableHead>
                     <TableRow>
@@ -41,31 +50,17 @@ const Import = (props) => {
                 <TableBody>
                     {props.makes.map((make, index) => {
                         return (
-                            <TableRow key={make.MakeId} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                                <TableCell component="th" scope="make">{make.MakeId}</TableCell>
-                                <TableCell>{make.MakeName}</TableCell>
-                                <TableCell>
-                                    <IconButton
-                                        id="long-button"
-                                        aria-expanded={open ? 'true' : undefined}
-                                        aria-haspopup="menu"
-                                        onClick={handleClick}
-                                    >
-                                        <MoreVertIcon />
-                                    </IconButton>
-                                    <Menu
-                                        id="long-menu"
-                                        anchorEl={anchorEl}
-                                        open={open}
-                                        onClose={handleClose}
-                                    >
-                    
-                                        <MenuItem onClick={handleClose}>
-                                            <p onClick={props.deleteMake}>Delete</p>
-                                        </MenuItem>
-                                    </Menu>
-                                </TableCell>
-                            </TableRow>
+                                <TableRow key={index} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                                    <TableCell component="th" scope="make">{make.MakeId}</TableCell>
+                                    <TableCell>{make.MakeName}</TableCell>
+                                    <TableCell>
+                                        <IconButton
+                                            onClick={handleClick}
+                                        >
+                                            <MoreVertIcon />
+                                        </IconButton>
+                                    </TableCell>
+                                </TableRow>
                         )
                     })}
                 </TableBody>
